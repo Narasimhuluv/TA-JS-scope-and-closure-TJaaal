@@ -12,6 +12,7 @@
 
 6. What are the different types of execution context?
    A) a new execution context gets created every time a function is executed
+   there are two excution contexts one is global excution context and function excution context
 
 7. When global and function execution context gets created?
    A) the JavaScript engine creates the global execution context before it starts to execute any code. and a new function execution context gets created every time a function is executed
