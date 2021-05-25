@@ -1,4 +1,3 @@
-
 1. Which all function is Higher order function and which one is a callback function in the code given below.
 
 ```js
@@ -18,6 +17,7 @@ function multiplyBy5(n) {
 }
 let numbersAddedFive = multiplyArrayByN(marks, addFive);
 let numbersMultipliedBy5 = multiplyArrayByN(marks, multiplyBy5);
+//  addFive and multiplyBy5 is CallBack function
 ```
 
 2. Create the execution context diagram of the above code snippet
@@ -27,6 +27,7 @@ let numbersMultipliedBy5 = multiplyArrayByN(marks, multiplyBy5);
 ```js
 function operation(n, opFn) {
   // your code goes her
+  let number = 23;
 }
 // TEST
 console.log(
