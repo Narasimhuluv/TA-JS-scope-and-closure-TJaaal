@@ -77,4 +77,5 @@ let counter = function () {
   }
   return increment();
 };
+// The counter is not a function thats why its through into an error
 ```
