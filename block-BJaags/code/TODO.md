@@ -2,7 +2,10 @@ To create the execution context diagram consider the following:
 
 - Global and Function Execution Context
 - Different Phases Of Execution Context
+  A) There are two phases of execution context one is Declaration or creation phase and Execution Phase context
 - Var let and const
+
+A) var is an global scope function and let & const is block scope function
 
 Create the execution context diagram of the following code line by line.
 
@@ -15,6 +18,8 @@ let hundred = square(10);
 console.log(hundred);
 ```
 
+![][./images/img1.jpg]
+
 Create the execution context diagram of the following code line by line.
 
 ```js
@@ -26,6 +31,8 @@ var five = addFive(0);
 var ten = addFive(5);
 console.log(five, ten);
 ```
+
+![][./images/img2.jpg]
 
 Create the execution context diagram of the following code line by line.
 
@@ -42,6 +49,8 @@ function multiplyArrayByN(arr, n) {
 let numbers = multiplyArrayByN(marks);
 ```
 
+![][./images/img3.jpg]
+
 Create the execution context diagram of the following code line by line.
 
 ```js
@@ -54,6 +63,8 @@ function counter(){
   return increment()
 }
 ```
+
+![][./images/img4.jpg]
 
 Create the execution context diagram of the following code line by line.
 
