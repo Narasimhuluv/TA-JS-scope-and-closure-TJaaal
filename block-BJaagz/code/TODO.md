@@ -24,8 +24,9 @@ forEach(["Sam", "Jon", "Arya"], (name, i, arr) =>
 
 ```js
 function map(arr, cb) {
-  arr.reduce((acc, cv) => {
-    acc.push(acb(cv));
+  return arr.reduce((acc, cv) => {
+    acc.push(cb(cv));
+    return acc;
   }, []);
 }
 
@@ -41,8 +42,10 @@ map(["Sam", "Jon", "Arya"], (name) => name + name); // ['SamSam', 'JonJon', 'Ary
 ```js
 function filter(arr, cb) {
   // Your code goes here
-  arr.reduce((acc, cv) => {
-    acc = acc + cv;
+  return arr.reduce((acc, cv) => {
+    if (cb(cv)) {
+      acc.push(cv);
+    }
     return acc;
   }, []);
 }
