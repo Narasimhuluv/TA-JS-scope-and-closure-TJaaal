@@ -1,6 +1,25 @@
 1. Create a function by your choice that accepts a callback function.
 
+```js
+function high(cb) {
+  return cb(100);
+}
+high(function callback(num) {
+  return num + 2;
+});
+```
+
 2. Create a function by you choice that returns a function reference.
+
+```js
+function high(cb) {
+  function callback(num) {
+    return num + 2;
+  }
+  return callback(12);
+}
+high();
+```
 
 3. Create a higher order function called `map` that takes two inputs:
    - An array of numbers/string/boolean etc
@@ -12,10 +31,10 @@ Have `map` return a new array filled with values that are the result of the 'cal
 // Your code goes here
 function map(array, cb) {
   let final = [];
-  for (let i = 0; i < array.length; i++) {
-    let element = array[i];
-    final.push(cb(element));
+  for (let ele of array) {
+    final.push(cb(ele));
   }
+  return final;
 }
 
 // Test Your Code
@@ -31,9 +50,11 @@ multiplyByTwo(2); //-> 4
 
 ```js
 // Your code goes here
-letters.forEach((ele) => {
-  console.log(alphabet);
-});
+function foreach(array,cb){
+  for(let; elem of array){
+     cb(elem)
+  }
+}
 
 // Test Your Code
 let alphabet = "";
@@ -50,10 +71,18 @@ console.log(alphabet); //prints 'abcd'
 // Test Your Code
 function filter(arr, cb) {
   let final = [];
-  for (let i = 0; i < arr.length; i++) {
-    let element = arr[i];
-    final.push(cb(numbers));
-  }
+  // for (let i = 0; i < arr.length; i++) {
+  //   let element = arr[i];
+  //   if (cb(element)) {
+  //     final.push(element);
+  //   }
+  // }
+  arr.forEach((elem) => {
+    if (cb(elem)) {
+      final.push(elem);
+    }
+  });
+  return final;
 }
 
 var numbers = [1, 3, 5, 4, 7, 89, 234, 20];
