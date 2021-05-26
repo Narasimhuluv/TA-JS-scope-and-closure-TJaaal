@@ -5,14 +5,10 @@
 - It should work exactly like array `forEach` method
 
 ```js
-function forEach(arr, index, cb) {
-  let final = [];
-  arr.forEach((element) => {
-    if (cb(element)) {
-      final.push(element);
-    }
+function forEach(arr, cb) {
+  arr.reduce((acc, cv, index, arr) => {
+    cb(cv, index, arr);
   });
-  return final;
 }
 
 forEach(["Sam", "Jon", "Arya"], (name, i, arr) =>
@@ -28,12 +24,9 @@ forEach(["Sam", "Jon", "Arya"], (name, i, arr) =>
 
 ```js
 function map(arr, cb) {
-  let final = [];
-  arr.map((element) => {
-    final.push(element);
-    return element;
-  });
-  return final;
+  arr.reduce((acc, cv) => {
+    acc.push(acb(cv));
+  }, []);
 }
 
 map(["Sam", "Jon", "Arya"], (name) => name + name); // ['SamSam', 'JonJon', 'AryaArya']
