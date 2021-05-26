@@ -13,9 +13,9 @@ let getSum = outer();
 let num = getSum();
 ```
 
-2.
+![][images/img1.jpg]
 
-Create the execution context diagram for following code. Also write the output of the code below.
+2.Create the execution context diagram for following code. Also write the output of the code below.
 
 ```js
 function getCounter() {
@@ -28,11 +28,13 @@ function getCounter() {
 
 let counter = getCounter();
 
-counter(); // output
-counter(); // output
-counter(); // output
-counter(); // output
+counter(); // 0
+counter(); // 1
+counter(); // 2
+counter(); // 3
 ```
+
+![][images/img2.jpg]
 
 3. Create the execution context diagram
 
@@ -43,11 +45,13 @@ function makeColorChanger(color) {
   };
 }
 
-let blue = makeColorChanger('blue');
-let tomato = makeColorChanger('tomato');
+let blue = makeColorChanger("blue");
+let tomato = makeColorChanger("tomato");
 
 blue();
 tomato();
 
 // What will be the background color after the execution of last line
+//tomato
+![][images / img3.jpg];
 ```
