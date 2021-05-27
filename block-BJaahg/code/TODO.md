@@ -42,6 +42,8 @@ console.log(one, two);
 //  two : - 2
 ```
 
+![][./images/add one first.png]
+
 4. Make a Execution Context Diagram for the following JS and write the output.
 
 ```js
@@ -370,6 +372,10 @@ const half = (num) => {
 };
 
 let allFunctions = [addOne, subTwo, multiplyThree, addOne, multiplyThree, half];
+allFunctions.reduce((acc, cv) => {
+  acc = cv(acc);
+  return acc;
+}, 100);
 
 // Answer is: 447
 ```
