@@ -13,6 +13,18 @@ function once(cb) {
   };
 }
 
+// function once(cb) {
+//   // your code goes here
+//   cb(sayHello);
+//   return function (el) {
+//     if (el == 1) {
+//       alert("You can only call me once!");
+//     } else{
+//       alert("Can't be called twice");
+//     }
+//   };
+// }
+
 // TEST
 function sayHello() {
   alert("Call me once!");
@@ -32,7 +44,7 @@ function once(cb, param) {
       cb(param);
       icalled = true;
     } else {
-      alert(`You can't call teh function again`);
+      alert(`yout can't be called twice`);
     }
   };
 }
@@ -58,7 +70,7 @@ function once(cb, ...param) {
       cb(...param);
       isCalled = true;
     } else {
-      alert(`You can't call teh function again`);
+      alert(`You can't be called twice`);
     }
   };
 }
