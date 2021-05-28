@@ -7,12 +7,15 @@ The returned function accepts a sentence. If the sentence contains the `fromWord
 ```js
 function censor(fromWord, toWord) {
   //  Your code goes here
+  return function (one, two) {
+    return `${one}  ${two}`;
+  };
 }
 
-let censorSentence = censor('World', 'Sam');
-censorSentence('Hello World'); // Hello Sam
+let censorSentence = censor("World", "Sam");
+censorSentence("Hello World"); // Hello Sam
 
-let censorQuote = censor('die', 'live');
+let censorQuote = censor("die", "live");
 censorQuote(`all men must die`); // all men must live
 ```
 
@@ -26,6 +29,9 @@ The returned function either accepts two parameter or one parameter.
 ```js
 function multipleCensor() {
   //  Your code goes here
+  return function censor(one two){
+    console.log(one + two)
+  }
 }
 
 let censorQuote = multipleCensor();
@@ -49,35 +55,37 @@ The returned function accepts one parameter.
 - If the parameter is the same as the password it will return the object in which we stored the values.
 
 ```js
-function createCache() {
+function createCache(array, callback) {
   // Your code goes here
+  return add10;
 }
 
 function add10(num) {
   return num + 10;
 }
 
-let addCache = createCache(add10, 'foo');
+let addCache = createCache(add10, "foo");
 
 addCache(12); // 22
 addCache(100); // 110
 addCache(1); // 11
 
-addCache('foo'); // {12: 22, 100: 110, 1: 11}
+addCache("foo"); // {12: 22, 100: 110, 1: 11}
 ```
 
 4. Change the above function in such a way that when the returned function is called with any other value than password. It should first check the object where we are storing the argument and return value. If the key is present return the value form the object itself. Otherwise call the callback function with the parameter.
 
 ```js
-function createCache() {
+function createCache(arr, cb) {
   // Your code goes here
+  return add10;
 }
 
 function add10(num) {
   return num + 10;
 }
 
-let addCache = createCache(add10, 'foo');
+let addCache = createCache(add10, "foo");
 
 addCache(12); // 22
 addCache(100); // 110
@@ -85,5 +93,5 @@ addCache(100); // 110 (callback should not be called)
 addCache(100); // 110 (callback should not be called)
 addCache(1); // 11
 
-addCache('foo'); // {12: 22, 100: 110, 1: 11}
+addCache("foo"); // {12: 22, 100: 110, 1: 11}
 ```
